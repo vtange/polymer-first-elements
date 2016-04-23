@@ -1,13 +1,29 @@
 <link rel="import" href="../polymer/polymer.html">
 
-<dom-module id="hello-polymer">
+<dom-module id="expandable-hello-polymer">
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
     <template>
-        <h2>Hello, Polymer!</h2>
-        <p>This is our Hello World example.</p>
+        <button id="btn">Click me!</button>
+        <div id="body">
+            <h2>Hello, Polymer!</h2>
+            <p>This is our expandable Hello World example.</p>
+        </div>
     </template>
 </dom-module>
 <script>
     Polymer({
-		is: "hello-polymer"
-	});
+        is: "expandable-hello-polymer",
+		ready: function() {
+			var that = this;
+			var btn = that.$.btn;
+			btn.onclick = function() {
+				var body = that.$.body;
+				body.classList.toggle('invisible');
+			};
+		}
+    });
 </script>
