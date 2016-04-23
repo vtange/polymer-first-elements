@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Show your Name!</title>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+        <link rel="import" href="name-element.html">
+    </head>
+    <body>
+        <div>
+            <label for="firstNameInput">Whose element is this?</label>
+            <input id="firstNameInput" type="text" />
+            <input id="lastNameInput" type="text" />
+ <button id="btn">Change name</button>
+        </div>
+        <attributes-polymer id="elem" firstname="Sander" lastname="Rossel"></attributes-polymer>
+    </body>
+</html>
+
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function() {
+        var firstName = document.getElementById('firstNameInput').value;
+        var lastName = document.getElementById('lastNameInput').value;
+        var elem = document.getElementById('elem');
+        elem.firstname = firstName;
+        elem.lastname = lastName;
+    };
+</script>

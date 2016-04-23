@@ -1,0 +1,17 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="name-element">
+    <template>
+        <span>This is <span>{{firstname}}</span> <span>{{lastname}}</span>'s custom element!</span>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "name-element",
+        properties: {
+            firstname: "",
+            lastname: ""
+        }
+    });
+</script>
