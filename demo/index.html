@@ -8,9 +8,23 @@
       window.Polymer.dom = 'shadow';
       */
     </script>
-    <link rel="import" href="icon-toggle-demo.html">
+    <link rel="import" href="test-app.html">
+	<style is="custom-style">
+      /* Define a document-wide default value */
+      :root {
+        --icon-toggle-outline-color: red;
+      }
+      /* Override the value specified in icon-toggle-demo */
+      test-app {
+        --icon-toggle-pressed-color: blue;
+      }
+      /* This rule does not work! */
+      body {
+        --icon-toggle-color: purple;
+      }
+    </style>
   </head>
   <body>
-    <icon-toggle-demo></icon-toggle-demo>
+    <test-app></test-app>
   </body>
 </html>
